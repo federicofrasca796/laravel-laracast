@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laracast @yield('page-title', 'a')</title>
+        <title>Laracast @yield('page-title', '')</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +14,12 @@
         <link rel="stylesheet" href="{{ asset('css/app.css')}}">
     </head>
     <body>
+        @include('partials.header')
         
+        <main id="site_main">
+            @yield('main-content')
+        </main>
+
+        @include('partials.footer')
     </body>
 </html>
