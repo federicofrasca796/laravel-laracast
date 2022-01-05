@@ -1,6 +1,6 @@
 <header id="site_header">
     <nav class="navbar navbar-expand-lg navbar-light bg_primary">
-    <div class="container-fluid">
+    <div class="container-fluid d-flex justify-content-between">
         <a class="navbar-brand" href="#">
             <img src="{{asset('img/laracasts-logo.svg')}}" alt="laracasts logo">
         </a>
@@ -9,20 +9,34 @@
         <span class="navbar-toggler-icon"></span>
         </button> --}}
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <div>
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                @foreach ($nav_items as $item)
+                <li class="nav-item {{$item['new']?'badge-new':''}}">
+                    <a class="nav-link" href="">{{$item['name']}}</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                
+                @endforeach
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+        </div>
+        
+        <div>
+            <ul class="navbar-nav d-flex">
+            <li>
+                <button class="btn btn-outline-success" type="submit">
+                    <img src="{{asset('img/search-icon.svg')}}" alt="search icon">
+                </button>
+            </li>
+            <li>
+                <a href="" class="nav-link">
+                    Sign in
+                </a>
+            </li>
+            <li>
+                <a href="" class="btn btn-outline-light rounded-pill">
+                    Get Started
+                </a>
+            </li>
+        </ul>
         </div>
     </div>
 </nav>
