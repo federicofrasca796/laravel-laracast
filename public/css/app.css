@@ -11246,3 +11246,15 @@ textarea.form-control-lg {
 html, body {
   font-family: "Poppins", sans-serif;
 }
+
+.bg_primary {
+  background-color: #344a71;
+}
+
+#site_header {
+  color: #fff;
+  text-transform: uppercase;
+}
+#site_header .nav-link {
+  color: rgba(255, 255, 255, 0.5);
+}
